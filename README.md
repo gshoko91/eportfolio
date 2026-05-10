@@ -79,16 +79,75 @@ is often the simplest loop.
 
 ## Submission workflow (per the brief, §6)
 
-When submitting the e-Portfolio for a summative mark:
+When submitting the e-Portfolio for a summative mark, you need to
+freeze a snapshot of the site so the marker sees exactly the version
+you submitted, even if you keep working on `main`.
 
-1. **Branch off** the section being submitted (e.g. `git switch -c
-   submission/launch-into-computing`).
-2. **Configure Pages source** to that branch in repo Settings → Pages,
-   so the marker sees the version frozen at submission time.
-3. **Submit the Pages URL** via the module submission point.
+The procedure has been dry-run end-to-end on this repo on 10 May 2026
+— branching, pushing, switching back, and teardown all verified.
 
-Day-to-day work continues on `main`; submission branches are immutable
-snapshots.
+### 1. Snapshot main as an immutable submission branch
+
+```bash
+# Replace <module-slug> with e.g. launch-into-computing
+git switch -c submission/<module-slug>
+git push -u origin submission/<module-slug>
+```
+
+### 2. Switch GitHub Pages source to the submission branch
+
+Two equivalent ways — pick whichever you prefer.
+
+**Web UI:**
+1. Go to <https://github.com/gshoko91/eportfolio/settings/pages>
+2. Under *Build and deployment* → *Branch*, change the dropdown from
+   `main` to `submission/<module-slug>`.
+3. Click **Save**. Pages will rebuild within ~30 seconds.
+
+**gh CLI:**
+
+```bash
+gh api repos/gshoko91/eportfolio/pages -X PUT \
+  -f "source[branch]=submission/<module-slug>" \
+  -f "source[path]=/"
+
+# Verify the source has switched + build succeeded:
+gh api repos/gshoko91/eportfolio/pages/builds/latest \
+  --jq '"status=\(.status)  branch=\(.commit[0:7])"'
+```
+
+### 3. Submit the Pages URL
+
+```
+https://gshoko91.github.io/eportfolio/
+```
+
+The URL stays the same — only the served branch changes. Confirm in a
+private browser tab that the page reflects the submission-branch
+content before clicking submit on the module page.
+
+### 4. Continue day-to-day work on main
+
+```bash
+git switch main
+```
+
+### After the marker has finished
+
+You can either:
+
+- **Leave the submission branch in place** as a permanent record of
+  what was submitted (recommended).
+- **Switch Pages source back to `main`** so the live site reflects
+  ongoing work:
+  ```bash
+  gh api repos/gshoko91/eportfolio/pages -X PUT \
+    -f "source[branch]=main" -f "source[path]=/"
+  ```
+- **Both** — keep the branch and switch Pages back to `main`.
+
+Submission branches are immutable snapshots — never push commits onto
+them after submission.
 
 ## Editing pages
 
