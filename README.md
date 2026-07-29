@@ -151,6 +151,12 @@ them after submission.
 
 ## Editing pages
 
+> **The `.html` files are the source of truth.** An earlier dev-only generator
+> (`build_portfolio.py`, kept in `%TEMP%` and never committed) produced the
+> first version of these pages. That temp directory has since been cleared and
+> the script no longer exists, so nothing regenerates or overwrites the HTML.
+> Edit the pages directly.
+
 - Each page is self-contained HTML — header, menu, banner, main content,
   contact section, footer, scripts. The duplication is deliberate (no
   templating engine), but it means a menu change has to be made in 10
