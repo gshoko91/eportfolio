@@ -16,8 +16,8 @@ build step. Served straight off GitHub Pages.
 .
 ├── index.html                     Banner + About Me snippet + module/project tiles + contact
 ├── about.html                     Full About Me — profile, experience, skills, quals, programme, interests
-├── launch-into-computing.html     Active module — LOs, artefacts, reflection, meetings, skills matrix, action plan
-├── understanding-ai.html          Stub — full 5-section skeleton, populated when module begins
+├── launch-into-computing.html     Completed module — LOs, artefacts, reflection, meetings, skills matrix, action plan
+├── understanding-ai.html          Current module — Units 1-8 record, discussions, essay outline and actions
 ├── numerical-analysis.html        Stub
 ├── machine-learning.html          Stub
 ├── intelligent-agents.html        Stub
@@ -48,6 +48,21 @@ Each module page mirrors the five-section structure prescribed by the brief
 Professional skills matrix and action plan** — laid out using FORTY's
 `spotlights` pattern. Reflections use the 3 W's framework (What? / So
 what? / What next?); Gibbs' Reflective Cycle is the sanctioned alternative.
+
+## Current content (22 September 2026)
+
+- About and Home link to the current Understanding AI work.
+- Understanding AI records work through Unit 8: CLD 1 (79%, Distinction),
+  CLD 2 submitted, and the formative essay outline submitted. The unit record
+  distinguishes saved course material from completed practical evidence.
+- The Learning Loop connects this work to the completed Launch into Computing
+  module. Existing self-ratings are retained with updated evidence.
+- Assessment status was last verified in Moodle on 19 September. Update that
+  verification date only after checking new grades or feedback.
+- `assets/css/portfolio.css` provides the responsive progress cards, section
+  links and evidence-note styles on the four updated pages.
+- Raw coursework, peer captures, tutor attachments and local working notes
+  remain outside the public repository. Summary links require university login.
 
 ## Local preview
 

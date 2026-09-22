@@ -1,0 +1,40 @@
+/* Evidence and progress components extending the Forty theme. */
+.eyebrow { color: #9bf1ff; font-size: 0.75em; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.8em; }
+.progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3em; margin: 2em 0; }
+.progress-card { min-width: 0; padding: 1.5em; background: rgba(155, 241, 255, 0.055); border: 1px solid rgba(155, 241, 255, 0.22); border-top: 3px solid #9bf1ff; }
+.progress-card h3 { font-size: 1.6em; line-height: 1.35; }
+.progress-card h3 span { display: block; font-size: 0.6em; color: #9bf1ff; margin-top: 0.3em; }
+.progress-card p:last-child { margin-bottom: 0; }
+.progress-card a { font-weight: 600; }
+.record-note { color: #c6cad9; font-size: 0.88em; }
+.section-links { display: flex; flex-wrap: wrap; gap: 0.65em 1.4em; border-top: 1px solid rgba(212, 212, 255, 0.15); padding-top: 1.4em; }
+.section-links a { font-size: 0.9em; }
+.evidence-entry { padding: 2.5em 0; border-top: 1px solid rgba(212, 212, 255, 0.15); }
+.evidence-entry:first-of-type { margin-top: 2em; }
+.evidence-note { border-left: 3px solid #ffc15e; background: rgba(255, 193, 94, 0.055); padding: 1.3em 1.6em; margin: 1.8em 0; }
+.evidence-note p:last-child { margin-bottom: 0; }
+.evidence-details { border: 1px solid rgba(212, 212, 255, 0.22); padding: 1em 1.3em; margin: 1.8em 0; }
+.evidence-details summary { cursor: pointer; color: #9bf1ff; font-weight: 600; }
+.evidence-details[open] summary { margin-bottom: 1.4em; }
+.reference-list li { padding-left: 0.4em; margin-bottom: 1em; overflow-wrap: anywhere; }
+.reflection-history h4 { margin-top: 1.7em; }
+.action-record li { margin-bottom: 1.2em; padding-left: 0.4em; }
+header.major { max-width: 100%; }
+header.major > :first-child { max-width: 100%; overflow-wrap: break-word; }
+#main [id] { scroll-margin-top: 6em; }
+#main table caption { text-align: left; color: #c6cad9; font-size: 0.85em; padding: 0 0 1em; }
+#main table th { vertical-align: top; }
+#main blockquote p:last-child { margin-bottom: 0; }
+#main a:focus-visible, #main summary:focus-visible { outline: 2px solid #9bf1ff; outline-offset: 5px; }
+@media screen and (max-width: 736px) {
+    .progress-grid { grid-template-columns: 1fr; gap: 1em; }
+    .progress-card { padding: 1.3em; }
+    .progress-card h3 { font-size: 1.4em; }
+    .evidence-entry { padding: 2em 0; }
+    .section-links { gap: 0.8em 1.2em; }
+    ul.actions { flex-direction: column; align-items: flex-start; gap: 1em; margin-left: 0; }
+    ul.actions li { max-width: 100%; padding: 0; }
+    ul.actions .button { max-width: 100%; height: auto; min-height: 3.5em; line-height: 1.6; white-space: normal; padding-top: 1em; padding-bottom: 1em; }
+    #main .table-wrapper { overscroll-behavior-x: contain; }
+    #unit-record table, #skills table, #cld2 table { min-width: 38em; }
+}
